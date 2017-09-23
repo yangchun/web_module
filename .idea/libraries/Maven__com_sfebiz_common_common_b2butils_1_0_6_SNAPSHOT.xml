@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.sfebiz.common:common-b2butils:1.0.6-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/sfebiz/common/common-b2butils/1.0.6-SNAPSHOT/common-b2butils-1.0.6-20170901.031031-2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/sfebiz/common/common-b2butils/1.0.6-SNAPSHOT/common-b2butils-1.0.6-20170901.031031-2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/sfebiz/common/common-b2butils/1.0.6-SNAPSHOT/common-b2butils-1.0.6-20170901.031031-2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

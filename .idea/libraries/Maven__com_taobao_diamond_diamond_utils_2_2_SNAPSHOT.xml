@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.taobao.diamond:diamond-utils:2.2-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/taobao/diamond/diamond-utils/2.2-SNAPSHOT/diamond-utils-2.2-20151123.025249-3.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/taobao/diamond/diamond-utils/2.2-SNAPSHOT/diamond-utils-2.2-20151123.025249-3-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/taobao/diamond/diamond-utils/2.2-SNAPSHOT/diamond-utils-2.2-20151123.025249-3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

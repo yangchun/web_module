@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.UserDao">
+
+    <resultMap id="userDOResult" type="com.domain.UserDO">
+        <result column="id" property="id"/>
+        <result column="gmt_create" property="gmtCreate"/>
+        <result column="email" property="email"/>
+        <result column="is_parent" property="isParent"/>
+        <result column="parent_id" property="parentId"/>
+        <result column="description" property="description"/>
+        <result column="latest_login_ip_address" property="latestLoginIpAddress"/>
+        <result column="latest_login_time" property="latestLoginTime"/>
+        <result column="latest_modified_pwd_time" property="latestModifiedPwdTime"/>
+        <result column="gmt_modified" property="gmtModified"/>
+        <result column="account" property="account"/>
+        <result column="nick_name" property="nickName"/>
+        <result column="password" property="password"/>
+        <result column="cellphone" property="cellphone"/>
+        <result column="state" property="state"/>
+        <result column="photo_url" property="photoUrl"/>
+        <result column="login_times" property="loginTimes"/>
+    </resultMap>
+
+    <sql id="userDO_columns">
+    uc_user.id,
+    uc_user.gmt_create,
+    uc_user.email,
+    uc_user.is_parent,
+    uc_user.parent_id,
+    uc_user.description,
+    uc_user.latest_login_ip_address,
+    uc_user.latest_login_time,
+    uc_user.latest_modified_pwd_time,
+    uc_user.gmt_modified,
+    uc_user.account,
+    uc_user.nick_name,
+    uc_user.password,
+    uc_user.cellphone,
+    uc_user.state,
+    uc_user.photo_url,
+    uc_user.login_times
+</sql>
+
+    <sql id="userDO_sqlForInsert">
+    id,
+    gmt_create,
+    email,
+    is_parent,
+    parent_id,
+    description,
+    latest_login_ip_address,
+    latest_login_time,
+    latest_modified_pwd_time,
+    gmt_modified,
+    account,
+    nick_name,
+    password,
+    cellphone,
+    state,
+    photo_url,
+    login_times
+</sql>
+
+    <sql id="userDO_columnsForInsert">
+    #{id},
+    now(),
+    #{email},
+    #{isParent},
+    #{parentId},
+    #{description},
+    #{latestLoginIpAddress},
+    #{latestLoginTime},
+    #{latestModifiedPwdTime},
+    now(),
+    #{account},
+    #{nickName},
+    #{password},
+    #{cellphone},
+    #{state},
+    #{photoUrl},
+    #{loginTimes}
+</sql>
+
+    <sql id="userDO_setterForUpdate">
+        <set>
+            gmt_modified = now(),
+            <if test="email != null">
+                email = #{email},
+            </if>
+            <if test="isParent != null">
+                is_parent = #{isParent},
+            </if>
+            <if test="parentId != null">
+                parent_id = #{parentId},
+            </if>
+            <if test="description != null">
+                description = #{description},
+            </if>
+            <if test="latestLoginIpAddress != null">
+                latest_login_ip_address = #{latestLoginIpAddress},
+            </if>
+            <if test="latestLoginTime != null">
+                latest_login_time = #{latestLoginTime},
+            </if>
+            <if test="latestModifiedPwdTime != null">
+                latest_modified_pwd_time = #{latestModifiedPwdTime},
+            </if>
+            <if test="account != null">
+                account = #{account},
+            </if>
+            <if test="nickName != null">
+                nick_name = #{nickName},
+            </if>
+            <if test="password != null">
+                password = #{password},
+            </if>
+            <if test="cellphone != null">
+                cellphone = #{cellphone},
+            </if>
+            <if test="state != null">
+                state = #{state},
+            </if>
+            <if test="photoUrl != null">
+                photo_url = #{photoUrl},
+            </if>
+            <if test="loginTimes != null">
+                login_times = #{loginTimes},
+            </if>
+        </set>
+    </sql>
+
+    <sql id="userDO_selector">
+        select
+        <include refid="userDO_columns"/>
+        from uc_user
+    </sql>
+
+    <sql id="userDO_query_segment">
+        <trim prefix="WHERE" prefixOverrides="AND|OR">
+            <if test="data.id != null">
+                AND id = #{data.id}
+            </if>
+            <if test="data.gmtCreate != null">
+                AND gmt_create = #{data.gmtCreate}
+            </if>
+            <if test="data.email != null">
+                AND email = #{data.email}
+            </if>
+            <if test="data.isParent != null">
+                AND is_parent = #{data.isParent}
+            </if>
+            <if test="data.parentId != null">
+                AND parent_id = #{data.parentId}
+            </if>
+            <if test="data.description != null">
+                AND description = #{data.description}
+            </if>
+            <if test="data.latestLoginIpAddress != null">
+                AND latest_login_ip_address = #{data.latestLoginIpAddress}
+            </if>
+            <if test="data.latestLoginTime != null">
+                AND latest_login_time = #{data.latestLoginTime}
+            </if>
+            <if test="data.latestModifiedPwdTime != null">
+                AND latest_modified_pwd_time = #{data.latestModifiedPwdTime}
+            </if>
+            <if test="data.gmtModified != null">
+                AND gmt_modified = #{data.gmtModified}
+            </if>
+            <if test="data.account != null">
+                AND account = #{data.account}
+            </if>
+            <if test="data.nickName != null">
+                AND nick_name = #{data.nickName}
+            </if>
+            <if test="data.password != null">
+                AND password = #{data.password}
+            </if>
+            <if test="data.cellphone != null">
+                AND cellphone = #{data.cellphone}
+            </if>
+            <if test="data.state != null">
+                AND state = #{data.state}
+            </if>
+            <if test="data.photoUrl != null">
+                AND photo_url = #{data.photoUrl}
+            </if>
+            <if test="data.loginTimes != null">
+                AND login_times = #{data.loginTimes}
+            </if>
+            <if test="ins != null and ins != ''">
+                AND
+                <foreach collection="ins" item="item" open="(" separator="and" close=")">
+                    ${item.column} in
+                    <foreach collection="item.values" item="item" open="(" separator="," close=")">
+                        #{item}
+                    </foreach>
+                </foreach>
+            </if>
+            <if test="notIns != null and notIns != ''">
+                AND
+                <foreach collection="notIns" item="item" open="(" separator="and" close=")">
+                    ${item.column} not in
+                    <foreach collection="item.values" item="item" open="(" separator="," close=")">
+                        #{item}
+                    </foreach>
+                </foreach>
+            </if>
+            <if test="equals != null and equals != ''">
+                AND
+                <foreach collection="equals" item="item" open="(" separator="and" close=")">
+                    ${item.column} = #{item.value}
+                </foreach>
+            </if>
+            <if test="notEquals != null and notEquals != ''">
+                AND
+                <foreach collection="notEquals" item="item" open="(" separator="and" close=")">
+                    ${item.column} = #{item.value}
+                </foreach>
+            </if>
+            <if test="lts != null and lts != ''">
+                AND
+                <foreach collection="lts" item="item" open="(" separator="and" close=")">
+                    ${item.column} <![CDATA[ < ]]> #{item.value}
+                </foreach>
+            </if>
+            <if test="gts != null and gts != ''">
+                AND
+                <foreach collection="gts" item="item" open="(" separator="and" close=")">
+                    ${item.column} <![CDATA[ > ]]> #{item.value}
+                </foreach>
+            </if>
+            <if test="likes != null and likes != ''">
+                AND
+                <foreach collection="likes" item="item" open="(" separator="and" close=")">
+                    ${item.column} like concat('%', #{item.value}, '%')
+                </foreach>
+            </if>
+            <if test="ltes != null and ltes != ''">
+                AND
+                <foreach collection="ltes" item="item" open="(" separator="and" close=")">
+                    ${item.column} <![CDATA[ <= ]]> #{item.value}
+                </foreach>
+            </if>
+            <if test="gtes != null and gtes != ''">
+                AND
+                <foreach collection="gtes" item="item" open="(" separator="and" close=")">
+                    ${item.column} <![CDATA[ >= ]]> #{item.value}
+                </foreach>
+            </if>
+            <if test="ranges != null and ranges != ''">
+                AND
+                <foreach collection="ranges" item="item" open="(" separator="and" close=")">
+                    ${item.column} <![CDATA[ >= ]]> #{item.from} and ${item.column} <![CDATA[ < ]]> #{item.to}
+                </foreach>
+            </if>
+            AND is_delete = 0
+        </trim>
+    </sql>
+
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id"
+            parameterType="com.domain.UserDO">
+        insert into uc_user
+        (
+        <include refid="userDO_sqlForInsert"/>
+        ,is_delete
+        )
+        values
+        (
+        <include refid="userDO_columnsForInsert"/>
+        ,0
+        )
+    </insert>
+
+    <update id="update" parameterType="com.domain.UserDO">
+        update uc_user
+        <include refid="userDO_setterForUpdate"/>
+        where id = #{id}
+        and is_delete = 0
+    </update>
+
+
+    <update id="updateByQuery" parameterType="com.domain.UserDO">
+        update uc_user
+        <set>
+            gmt_modified = now(),
+            <if test="update.email != null">
+                email = #{update.email},
+            </if>
+            <if test="update.isParent != null">
+                is_parent = #{update.isParent},
+            </if>
+            <if test="update.parentId != null">
+                parent_id = #{update.parentId},
+            </if>
+            <if test="update.description != null">
+                description = #{update.description},
+            </if>
+            <if test="update.latestLoginIpAddress != null">
+                latest_login_ip_address = #{update.latestLoginIpAddress},
+            </if>
+            <if test="update.latestLoginTime != null">
+                latest_login_time = #{update.latestLoginTime},
+            </if>
+            <if test="update.latestModifiedPwdTime != null">
+                latest_modified_pwd_time = #{update.latestModifiedPwdTime},
+            </if>
+            <if test="update.account != null">
+                account = #{update.account},
+            </if>
+            <if test="update.nickName != null">
+                nick_name = #{update.nickName},
+            </if>
+            <if test="update.password != null">
+                password = #{update.password},
+            </if>
+            <if test="update.cellphone != null">
+                cellphone = #{update.cellphone},
+            </if>
+            <if test="update.state != null">
+                state = #{update.state},
+            </if>
+            <if test="update.photoUrl != null">
+                photo_url = #{update.photoUrl},
+            </if>
+            <if test="update.loginTimes != null">
+                login_times = #{update.loginTimes},
+            </if>
+        </set>
+        <include refid="userDO_query_segment"/>
+    </update>
+
+
+    <insert id="insertOrUpdate" useGeneratedKeys="true" keyProperty="id"
+            parameterType="com.domain.UserDO">
+        insert into uc_user
+        (
+        <include refid="userDO_sqlForInsert"/>
+        ,is_delete
+        )
+        values
+        (
+        <include refid="userDO_columnsForInsert"/>
+        ,0
+        )
+        on duplicate key update
+        gmt_modified = now()
+        ,is_delete = 0
+        <if test="email != null">
+            ,email = #{email}
+        </if>
+        <if test="isParent != null">
+            ,is_parent = #{isParent}
+        </if>
+        <if test="parentId != null">
+            ,parent_id = #{parentId}
+        </if>
+        <if test="description != null">
+            ,description = #{description}
+        </if>
+        <if test="latestLoginIpAddress != null">
+            ,latest_login_ip_address = #{latestLoginIpAddress}
+        </if>
+        <if test="latestLoginTime != null">
+            ,latest_login_time = #{latestLoginTime}
+        </if>
+        <if test="latestModifiedPwdTime != null">
+            ,latest_modified_pwd_time = #{latestModifiedPwdTime}
+        </if>
+        <if test="account != null">
+            ,account = #{account}
+        </if>
+        <if test="nickName != null">
+            ,nick_name = #{nickName}
+        </if>
+        <if test="password != null">
+            ,password = #{password}
+        </if>
+        <if test="cellphone != null">
+            ,cellphone = #{cellphone}
+        </if>
+        <if test="state != null">
+            ,state = #{state}
+        </if>
+        <if test="photoUrl != null">
+            ,photo_url = #{photoUrl}
+        </if>
+        <if test="loginTimes != null">
+            ,login_times = #{loginTimes}
+        </if>
+    </insert>
+
+    <!-- Delete -->
+    <update id="delete">
+        update uc_user
+        set is_delete = 1, gmt_modified = now()
+        <include refid="userDO_query_segment"/>
+    </update>
+    <update id="deleteById">
+    update uc_user
+    set is_delete = 1, gmt_modified = now()
+    where id = #{id}
+</update>
+
+
+    <!-- query class -->
+    <sql id="userDO_groupBy">
+        <if test="groupBys != null and groupBys != ''">
+            group by
+            <foreach collection="groupBys" item="item" open="" separator="," close="">
+                #{item}
+            </foreach>
+        </if>
+    </sql>
+
+    <sql id="userDO_orderby">
+        <if test="orderBys != null and orderBys != ''">
+            order by
+            <foreach collection="orderBys" item="item" open="" separator="," close="">
+                ${item.column} ${item.direction}
+            </foreach>
+        </if>
+    </sql>
+
+
+    <select id="query" resultMap="userDOResult"
+            parameterType="com.domain.UserDO">
+        <include refid="userDO_selector"/>
+        <include refid="userDO_query_segment"/>
+        <include refid="userDO_groupBy"/>
+        <include refid="userDO_orderby"/>
+    </select>
+
+    <select id="query4Page" resultMap="userDOResult"
+            parameterType="com.domain.UserDO">
+        <include refid="userDO_selector"/>
+        <include refid="userDO_query_segment"/>
+        <include refid="userDO_groupBy"/>
+        <include refid="userDO_orderby"/>
+        limit ${startRowForMysql}, ${pageSize}
+    </select>
+
+
+    <select id="count" resultType="java.lang.Long">
+        SELECT COUNT(1) FROM uc_user
+        <include refid="userDO_query_segment"/>
+    </select>
+
+    <select id="getById" resultMap="userDOResult">
+        <include refid="userDO_selector"/>
+        where id = #{id}
+        and is_delete = 0
+    </select>
+
+    <select id="getByIdForUpdate" resultMap="userDOResult">
+        <include refid="userDO_selector"/>
+        where id = #{id}
+        and is_delete = 0
+        for update
+    </select>
+
+
+    <select id="getUserByAccountAndPasswordAndChannel" resultMap="userDOResult" parameterType="map">
+        <include refid="userDO_selector"/>
+        LEFT JOIN uc_user_channel uc on uc.user_id = uc_user.id
+        WHERE uc_user.account = #{account}
+        AND uc_user.password = #{password}
+        AND uc.channel_nid = #{channelNid}
+        AND uc_user.is_delete = 0
+    </select>
+
+</mapper>

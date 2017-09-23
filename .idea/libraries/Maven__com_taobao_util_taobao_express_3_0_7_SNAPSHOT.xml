@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.taobao.util:taobao-express:3.0.7-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/taobao/util/taobao-express/3.0.7-SNAPSHOT/taobao-express-3.0.7-20150202.053524-3.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/taobao/util/taobao-express/3.0.7-SNAPSHOT/taobao-express-3.0.7-20150202.053524-3-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/taobao/util/taobao-express/3.0.7-SNAPSHOT/taobao-express-3.0.7-20150202.053524-3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

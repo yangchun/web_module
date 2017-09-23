@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.sfebiz.openapi:common-config:1.0.1-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/sfebiz/openapi/common-config/1.0.1-SNAPSHOT/common-config-1.0.1-20151102.023159-6.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/sfebiz/openapi/common-config/1.0.1-SNAPSHOT/common-config-1.0.1-20151102.023159-6-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/sfebiz/openapi/common-config/1.0.1-SNAPSHOT/common-config-1.0.1-20151102.023159-6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

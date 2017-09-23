@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../SSM_02/SSM_02.iml" filepath="$PROJECT_DIR$/../SSM_02/SSM_02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/api/api.iml" filepath="$PROJECT_DIR$/api/api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dao/dao.iml" filepath="$PROJECT_DIR$/dao/dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../SSM_01/mybatistest.iml" filepath="$PROJECT_DIR$/../SSM_01/mybatistest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service/service.iml" filepath="$PROJECT_DIR$/service/service.iml" />
+      <module fileurl="file://D:/fengqu/haitao-b2b-usercenter/usercenter.iml" filepath="D:/fengqu/haitao-b2b-usercenter/usercenter.iml" />
+      <module fileurl="file://D:/fengqu/haitao-b2b-usercenter/usercenter-api/usercenter-api.iml" filepath="D:/fengqu/haitao-b2b-usercenter/usercenter-api/usercenter-api.iml" />
+      <module fileurl="file://D:/fengqu/haitao-b2b-usercenter/usercenter-autotest/usercenter-autotest.iml" filepath="D:/fengqu/haitao-b2b-usercenter/usercenter-autotest/usercenter-autotest.iml" />
+      <module fileurl="file://D:/fengqu/haitao-b2b-usercenter/usercenter-config/usercenter-config.iml" filepath="D:/fengqu/haitao-b2b-usercenter/usercenter-config/usercenter-config.iml" />
+      <module fileurl="file://D:/fengqu/haitao-b2b-usercenter/usercenter-persistence/usercenter-persistence.iml" filepath="D:/fengqu/haitao-b2b-usercenter/usercenter-persistence/usercenter-persistence.iml" />
+      <module fileurl="file://D:/fengqu/haitao-b2b-usercenter/usercenter-service/usercenter-service.iml" filepath="D:/fengqu/haitao-b2b-usercenter/usercenter-service/usercenter-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webmodule.iml" filepath="$PROJECT_DIR$/webmodule.iml" />
+    </modules>
+  </component>
+</project>
