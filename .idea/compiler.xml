@@ -16,6 +16,7 @@
         <module name="usercenter-config" />
         <module name="usercenter-persistence" />
         <module name="usercenter-service" />
+        <module name="web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -30,6 +31,7 @@
       <module name="usercenter-config" target="1.6" />
       <module name="usercenter-persistence" target="1.6" />
       <module name="usercenter-service" target="1.6" />
+      <module name="web" target="1.5" />
       <module name="webmodule" target="1.5" />
     </bytecodeTargetLevel>
   </component>
